@@ -53,8 +53,8 @@ input:hover {
 .captcha {
   width: 470px;
   max-width: 470px;
-  height: 110px;
-  max-height: 110px;
+  height: 50px;
+  max-height: 50px;
   padding: 15px;  
   
   color: #726659;  

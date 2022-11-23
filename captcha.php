@@ -1,3 +1,6 @@
+<?php 
+session_start();    
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,12 +18,14 @@
         <input id="name" type="text" placeholder="NAME">
         <input id="email" type="text" placeholder="E-MAIL">
         <div class="captcha">
-            Captcha here
+            <img src="createCaptcha.php" alt="captcha">
         </div>
         <input id="captcha" class="captchaAnswer" type="text" placeholder="YOUR ANSWER">
 
         <input id="submit" type="submit" value="GO!">
     </form>
+    
 </body>
 
 </html>
+
