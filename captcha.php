@@ -16,11 +16,12 @@
         <input id="email" type="text" placeholder="E-MAIL">
         <div class="captcha">
             Captcha here
+            <input onclick="play()" type="button">PLAY MY AUDIO</input>
         </div>
         <input id="captcha" class="captchaAnswer" type="text" placeholder="YOUR ANSWER">
 
         <input id="submit" type="submit" value="GO!">
     </form>
 </body>
-
+<script src="audio.js"></script>
 </html>
