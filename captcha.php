@@ -20,7 +20,7 @@ session_start();
         <div class="captcha">
             <img src="createCaptcha.php" alt="captcha">
         </div>
-        <input id="captcha" class="captchaAnswer" type="text" placeholder="YOUR ANSWER">
+        <input id="captcha" class="captchaAnswer" name="captcha" type="text" placeholder="YOUR ANSWER">
 
         <input id="submit" type="submit" value="GO!">
     </form>
