@@ -12,13 +12,13 @@
 <body>
     <?php
     session_start();
-        if(isset($_POST['captcha'])&& isset($_SESSION['captcha']) && strtolower($_POST['captcha']) == strtolower($_SESSION['captcha']))
+        if(isset($_POST['captcha'])&& isset($_SESSION['captcha']) && strtolower($_POST['captcha']) === strtolower($_SESSION['captcha']))
         {
             echo "Vous n'êtes pas un robot. bien joué";
         }
         else{
             echo "Vous seriez pas un robot par hasard?";
-        }
+        }                        
     ?>
     <br>
     <span class="funFont">retourner sur la <a href="captcha.php">page précédente</a></span>
