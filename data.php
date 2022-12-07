@@ -1,14 +1,10 @@
 <?php
 session_start();
-$data = array();
-$i = 0;
-var_dump($_SESSION['captcha']);
-foreach ($_SESSION['captcha'] as $letter) {
-    // if(!is_dir($image)){
-    //     $data[$i] = $image;
-    //     $i++;
-    // }
-    echo $letter;
+$data = [];
+$letters = str_split($_SESSION['captcha']);
+foreach ($letters as $letter) {
+    $data[] = $letter;
+    //echo $letter;
 }
 echo json_encode($data);
 ?>

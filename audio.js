@@ -6,29 +6,33 @@
 // }
 
 let array;
-var images;
+var chars = [];
+let sounds = new Array();
 var xhr = new XMLHttpRequest();
-xhr.open('PUT', 'createCaptcha.php');
+xhr.open('PUT', 'data.php');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
-        images = JSON.parse(xhr.responseText);
-        array = Object.keys(images).length;
-        for(i; i < limit; i++){
-            document.getElementById('gallery').innerHTML += '<img src="image/'+images[i]+'" alt="fish" class="fishimage"></img>';
-        }
+      chars = JSON.parse(xhr.responseText);
+      array = Object.keys(chars).length;
+      for(i = 0; i < array; i++){
+        sounds += new Audio("audio/"+chars[i]+".wav");
+      }
     }
 };
-let sounds = new Array(new Audio("audio/1.mp3"),
-  new Audio("audio/2.mp3"));
-  var i = -1;
-  
-  function play() {
-      i++;
-      if (i == sounds.length){
-        i = -1;
-        return;
-      }
-      sounds[i].addEventListener('ended', play);
-      sounds[i].play();
-  }
+
+xhr.onerror = function() {
+  console.log("An error occurred during the transaction");
+};
+xhr.send();
+var i = -1;
+
+function play() {
+    i++;
+    if (i == sounds.length){
+      i = -1;
+      return;
+    }
+    sounds[i].addEventListener('ended', play);
+    sounds[i].play();
+}
