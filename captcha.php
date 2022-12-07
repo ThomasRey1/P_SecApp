@@ -18,9 +18,9 @@ session_start();
         <input id="name" type="text" placeholder="NAME">
         <input id="email" type="text" placeholder="E-MAIL">
         <div class="captcha">
-            <img src="images/new.png" class="newCaptcha" >
+            <img src="images/new.png" onclick="renew()" class="newCaptcha" >
 
-            <img src="createCaptcha.php" alt="captcha">
+            <span id="captchaImage"><img src="createCaptcha.php" alt="captcha"></span>
             
             <img src="images/audio.png" onclick="play()" class="audioCaptcha" >
         </div>
@@ -30,5 +30,6 @@ session_start();
     </form>
 </body>
 <script src="audio.js"></script>
+<script src="renew.js"></script>
 </html>
 

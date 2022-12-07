@@ -55,6 +55,10 @@ width: 50px;
 
 }
 
+#captchaImage{
+  width: 300px;
+}
+
 .captcha {
   width: 470px;
   max-width: 470px;
