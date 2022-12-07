@@ -16,7 +16,7 @@ xhr.onload = function() {
       chars = JSON.parse(xhr.responseText);
       array = Object.keys(chars).length;
       for(i = 0; i < array; i++){
-        sounds += new Audio("audio/"+chars[i]+".wav");
+        sounds.push(new Audio("audio/"+chars[i]+".wav"));
       }
     }
 };
