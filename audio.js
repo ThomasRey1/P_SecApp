@@ -6,6 +6,7 @@
 // }
 
 let array;
+var i;
 var chars = [];
 let sounds = new Array();
 var xhr = new XMLHttpRequest();
@@ -19,17 +20,17 @@ xhr.onload = function() {
         sounds.push(new Audio("audio/"+chars[i]+".wav"));
       }
     }
+    i = -1
 };
 
 xhr.onerror = function() {
   console.log("An error occurred during the transaction");
 };
 xhr.send();
-var i = -1;
 
 function play() {
     i++;
-    if (i == sounds.length){
+    if (i >= sounds.length){
       i = -1;
       return;
     }
