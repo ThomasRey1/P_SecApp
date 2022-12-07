@@ -18,7 +18,7 @@ session_start();
         <input id="name" type="text" placeholder="NAME">
         <input id="email" type="text" placeholder="E-MAIL">
         <div class="captcha">
-            <img src="images/new.png" onclick="renew()" class="newCaptcha" >
+            <img src="images/new.png" onclick="renew(); renewAudio()" class="newCaptcha" >
 
             <span id="captchaImage"><img src="createCaptcha.php" alt="captcha"></span>
             
