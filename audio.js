@@ -10,7 +10,7 @@ var i;
 var chars = [];
 let sounds = new Array();
 var xhr = new XMLHttpRequest();
-xhr.open('PUT', 'data.php');
+xhr.open('PUT', 'ceateCaptcha.php');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
   if (xhr.status === 200) {
@@ -23,21 +23,6 @@ xhr.onload = function() {
   i = -1
 };
 
-function renewAudio(){
-  xhr.open('PUT', 'data.php');
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.onload = function() {
-    sounds = [];
-    if (xhr.status === 200) {
-      chars = JSON.parse(xhr.responseText);
-      array = Object.keys(chars).length;
-      for(i = 0; i < array; i++){
-        sounds.push(new Audio("audio/"+chars[i]+".wav"));
-      }
-    }
-    i = -1
-  };
-}
 
 xhr.onerror = function() {
   console.log("An error occurred during the transaction");
@@ -52,4 +37,24 @@ function play() {
     }
     sounds[i].addEventListener('ended', play);
     sounds[i].play();
+}
+
+function renewAudio(){
+  xhr = new XMLHttpRequest();
+  xhr.open('PUT', 'data.php');
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      chars = JSON.parse(xhr.responseText);
+      array = Object.keys(chars).length;
+      for(i = 0; i < array; i++){
+        sounds.push(new Audio("audio/"+chars[i]+".wav"));
+      }
+    }
+    i = -1
+  };
+  xhr.onerror = function() {
+    console.log("An error occurred during the transaction");
+  };
+  xhr.send();
 }

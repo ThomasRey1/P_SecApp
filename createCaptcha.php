@@ -1,6 +1,7 @@
 <?php
 session_start();
-return convertTextToImage(secure_generate_string()); 
+
+return convertTextToImage(secure_generate_string());
 
  function secure_generate_string($strength = 6) {     
     $permitted_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';    
@@ -21,7 +22,7 @@ function convertTextToImage($textToConvert)
     $fontsize = 40;
     $angle = 0;
 
-    $imgHeight = 60;
+    $imgHeight = 50;
     $imgWidth = 0;
 
     for($i = 0; $i <strlen($textToConvert);$i++)
@@ -49,10 +50,10 @@ function convertTextToImage($textToConvert)
         $textWidth= abs(max($textbox[2],$textbox[4]));
         $textHeight= abs(max($textbox[5],$textbox[7]));
         $x = $count+($textWidth/2);
-        $y = (imagesy($img)/2+$textHeight/2);        
+        $y = (imagesy($img)/2+$textHeight/3);        
 
         $count = $count+$textWidth;
-        imagettftext($img,$fontsize,0,$x,$y,$textColor,$font,$letter);
+        imagettftext($img,20,0,$x,$y,$textColor,$font,$letter);
     }        
 
     $path = getcwd();
