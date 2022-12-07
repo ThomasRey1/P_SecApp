@@ -53,7 +53,7 @@ function convertTextToImage($textToConvert)
         $y = (imagesy($img)/2+$textHeight/3);        
 
         $count = $count+$textWidth;
-        imagettftext($img,20,0,$x,$y,$textColor,$font,$letter);
+        imagettftext($img,$fontsize,0,$x,$y,$textColor,$font,$letter);
     }        
 
     $path = getcwd();

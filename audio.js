@@ -10,7 +10,7 @@ var i;
 var chars = [];
 let sounds = new Array();
 var xhr = new XMLHttpRequest();
-xhr.open('PUT', 'ceateCaptcha.php');
+xhr.open('PUT', 'data.php');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
   if (xhr.status === 200) {
