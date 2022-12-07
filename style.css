@@ -50,12 +50,18 @@ input:hover {
   color: #e2dedb;
 }
 
+.audioCaptcha{
+width: 50px;  
+
+}
+
 .captcha {
   width: 470px;
   max-width: 470px;
-  height: 50px;
-  max-height: 50px;
-  padding: 15px;  
+  height: 100px;
+  max-height: 100px;
+  padding: 15px 15px 0 15px;    
+  
   
   color: #726659;  
   font-size: 0.875em;
@@ -65,7 +71,7 @@ input:hover {
   
 }
 .captchaAnswer{
-  border-top: 1px solid rgba(179, 172, 167, 0.4);     
+  border-top: 1px solid rgba(179, 172, 167, 0.4);       
 }
 
 #submit {

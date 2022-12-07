@@ -21,7 +21,7 @@ function convertTextToImage($textToConvert)
     $fontsize = 40;
     $angle = 0;
 
-    $imgHeight = 50;
+    $imgHeight = 60;
     $imgWidth = 0;
 
     for($i = 0; $i <strlen($textToConvert);$i++)
@@ -49,10 +49,10 @@ function convertTextToImage($textToConvert)
         $textWidth= abs(max($textbox[2],$textbox[4]));
         $textHeight= abs(max($textbox[5],$textbox[7]));
         $x = $count+($textWidth/2);
-        $y = (imagesy($img)/2+$textHeight/3);        
+        $y = (imagesy($img)/2+$textHeight/2);        
 
         $count = $count+$textWidth;
-        imagettftext($img,20,0,$x,$y,$textColor,$font,$letter);
+        imagettftext($img,$fontsize,0,$x,$y,$textColor,$font,$letter);
     }        
 
     $path = getcwd();

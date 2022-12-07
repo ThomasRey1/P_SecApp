@@ -18,10 +18,11 @@ session_start();
         <input id="name" type="text" placeholder="NAME">
         <input id="email" type="text" placeholder="E-MAIL">
         <div class="captcha">
-
-            <input onclick="play()" type="button">PLAY MY AUDIO</input>
+            <img src="images/new.png" class="newCaptcha" >
 
             <img src="createCaptcha.php" alt="captcha">
+            
+            <img src="images/audio.png" onclick="play()" class="audioCaptcha" >
         </div>
         <input id="captcha" class="captchaAnswer" name="captcha" type="text" placeholder="YOUR ANSWER">
 
