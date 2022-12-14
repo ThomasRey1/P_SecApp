@@ -12,7 +12,7 @@ session_start();
     <title>Captcha</title>
 </head>
 
-<body>
+<body onload="setValue()">
     <form id="form" class="topBefore" action="result.php" method="POST">
 
         <input id="name" type="text" placeholder="NAME">

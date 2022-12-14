@@ -1,5 +1,7 @@
-document.getElementById("name").value = localStorage.getItem("name");
-document.getElementById("email").value = localStorage.getItem("email");
+function setValue(){
+    document.getElementById("name").value = localStorage.getItem("name");
+    document.getElementById("email").value = localStorage.getItem("email");
+};
 
 function renew() {
     localStorage.setItem("name", document.getElementById("name").value);
@@ -21,3 +23,23 @@ function renew() {
 
     // renewAudio();
 }
+
+// Detect the refresh page
+
+// window.onbeforeunload = function() {
+//     alert('F5 pressed!');
+// }
+
+document.addEventListener("keydown", (e) => {         
+  if (e.key === "F5") {
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+  }
+});
+
+// Avec le Jquery
+// $(document.body).on("keydown", this, function (event) { 
+//           if (event.keyCode == 116) { 
+//               alert('F5 pressed!'); 
+//        } 
+// });
