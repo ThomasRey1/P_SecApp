@@ -18,11 +18,11 @@ return convertTextToImage(secure_generate_string());
 
 function convertTextToImage($textToConvert)
 {
-    $font = 'fonts/Captchafont-Regular.ttf';
-    $fontsize = 40;
+    $font = 'fonts/Thomaaaasfont-Regular.ttf';
+    $fontsize = 30;
     $angle = 0;
 
-    $imgHeight = 50;
+    $imgHeight = 70;
     $imgWidth = 0;
 
     for($i = 0; $i <strlen($textToConvert);$i++)
