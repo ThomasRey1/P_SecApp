@@ -3,7 +3,7 @@ session_start();
 
 return convertTextToImage(secure_generate_string());
 
- function secure_generate_string($strength = 6) {     
+function secure_generate_string($strength = 6) {     
     $permitted_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';    
     $input_length = strlen($permitted_chars);
     $random_string = '';

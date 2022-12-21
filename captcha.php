@@ -12,7 +12,7 @@ session_start();
     <title>Captcha</title>
 </head>
 
-<body>
+<body onload="setValue()">
     <form id="form" class="topBefore" action="result.php" method="POST">
 
         <input id="name" type="text" placeholder="NAME">
@@ -33,4 +33,3 @@ session_start();
 <script src="audio.js"></script>
 <script src="renew.js"></script>
 </html>
-
